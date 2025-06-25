@@ -1,12 +1,10 @@
-# React + Vite
+# Global News Aggregator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Global News Aggregator is a modern React-based developer tool designed to facilitate building dynamic news applications with a focus on performance and scalability. It leverages Vite for rapid development providing a smooth developer experience. The project features a clean architecture with centralized configuration files, an engaging user interface for exploring news by country, category, and search, and a backend API that aggregates news data from external sources such as NewsAPI.
 
-Currently, two official plugins are available:
+## Key Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Fast Development: Utilizes Vite and React for quick builds and hot module replacement.
+- Modular Configuration: Clear setup with dedicated config files for environment, linting, and dependencies.
+- Responsive UI: Interactive interface with filtering options and masonry layout for articles.
+- Dynamic Backend: API layer that fetches and serves news data based on user queries.
