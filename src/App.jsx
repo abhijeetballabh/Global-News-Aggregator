@@ -72,10 +72,9 @@ function App() {
           </Typography>
         </Toolbar>
       </AppBar>
-      <Box sx={{marginLeft: "40px" , py: 4, width: "100%", maxWidth: "100%", mx: 0 }}>
+      <Box sx={{py: 4, width: "100%", maxWidth: "100%", mx: 0, px: 0 }}>
         <Paper elevation={3} sx={{
-          marginLeft: 2,
-          marginRight: 2,
+          margin: "0 20px",
           px: { xs: 2, md: 4 }, py: 3, mb: 4, borderLeft: `8px solid ${red}`,
           borderRadius: 2, background: "#fafafa"
         }}>
@@ -136,11 +135,11 @@ function App() {
         {loading ? (
           <CircularProgress sx={{ display: 'block', mx: 'auto', my: 4, color: red }} />
         ) : (
-          <Box sx={{ width: "100%", mx: "auto" }}>
+          <Box sx={{ width: "100%", px: { xs: 1, md: 2 }, mx: "auto" }}>
             {articles.length === 0 && (
               <Box
                 sx={{
-                  minHeight: 400,
+                  minHeight: "60vh",
                   width: "100%",
                   display: "flex",
                   alignItems: "center",
