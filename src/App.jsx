@@ -30,7 +30,8 @@ function App() {
 
   const fetchNews = async () => {
     setLoading(true);
-    let url = `http://localhost:5000/api/news?country=${country}`;
+    const backendUrl = import.meta.env.VITE_BACKEND_URL || 'http://localhost:5000';
+    let url = `${backendUrl}/api/news?country=${country}`;
     if (q) url += `&q=${encodeURIComponent(q)}`;
     if (category) url += `&category=${category}`;
     const res = await fetch(url);
