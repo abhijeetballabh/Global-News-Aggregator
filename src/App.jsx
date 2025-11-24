@@ -63,7 +63,10 @@ function App() {
       minHeight: '100vh',
       background: "#fff",
       width: "100%",
-      boxSizing: "border-box"
+      boxSizing: "border-box",
+      display: "flex",
+      flexDirection: "column",
+      overflow: "hidden"
     }}>
       <AppBar position="static" sx={{ bgcolor: red, boxShadow: 2 }}>
         <Toolbar sx={{ justifyContent: "center" }}>
@@ -72,11 +75,10 @@ function App() {
           </Typography>
         </Toolbar>
       </AppBar>
-      <Box sx={{py: 4, width: "100%", maxWidth: "100%", mx: 0, px: 0 }}>
+      <Box sx={{py: 4, width: "100%", mx: 0, px: 2, flex: 1, boxSizing: "border-box", display: "flex", flexDirection: "column" }}>
         <Paper elevation={3} sx={{
-          margin: "0 20px",
           px: { xs: 2, md: 4 }, py: 3, mb: 4, borderLeft: `8px solid ${red}`,
-          borderRadius: 2, background: "#fafafa"
+          borderRadius: 2, background: "#fafafa", width: "100%", boxSizing: "border-box", flexShrink: 0
         }}>
           <form onSubmit={handleSearch} style={{ display: 'flex', gap: 16, flexWrap: "wrap", alignItems: "center" }}>
             <TextField
@@ -134,8 +136,8 @@ function App() {
         </Paper>
         {loading ? (
           <Box sx={{
-            minHeight: "60vh",
             width: "100%",
+            flex: 1,
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
@@ -143,17 +145,17 @@ function App() {
             borderRadius: 2,
             boxShadow: 2,
             mb: 2,
-            mx: { xs: 1, md: 2 }
+            boxSizing: "border-box"
           }}>
             <CircularProgress sx={{ color: red }} size={60} />
           </Box>
         ) : (
-          <Box sx={{ width: "100%", px: { xs: 1, md: 2 }, mx: "auto" }}>
-            {articles.length === 0 && (
+          <Box sx={{ width: "100%", mx: "auto", boxSizing: "border-box", flex: 1, display: "flex", flexDirection: "column" }}>
+            {articles.length === 0 ? (
               <Box
                 sx={{
-                  minHeight: "60vh",
                   width: "100%",
+                  flex: 1,
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
@@ -161,15 +163,14 @@ function App() {
                   borderRadius: 2,
                   boxShadow: 2,
                   mb: 2,
+                  boxSizing: "border-box"
                 }}
               >
                 <Typography variant="h6" align="center" sx={{ color: red }}>
                   No articles found for this country.<br />Try another country or search globally.
                 </Typography>
               </Box>
-            )}
-
-
+            ) : (
             <Masonry
               breakpointCols={breakpointColumnsObj}
               className="my-masonry-grid"
@@ -249,6 +250,7 @@ function App() {
                 </Paper>
               ))}
             </Masonry>
+            )}
           </Box>
         )}
       </Box>
@@ -264,8 +266,9 @@ function App() {
         {`
           .my-masonry-grid {
             display: flex;
-            margin-left: -5px; /* gutter size offset */
-            width: 100%;        /* use 100% not 100vw */
+            margin-left: -15px;
+            margin-right: -15px;
+            width: calc(100% + 30px);
             box-sizing: border-box;
             overflow-x: hidden;
           }

@@ -2,6 +2,10 @@
 
 A full-stack news aggregation application that allows users to search for and browse news articles from around the world. Built with React 19 and Express, featuring a modern UI and powerful news aggregation capabilities.
 
+## 🚀 Live Demo
+
+**[Global News Aggregator - Live App](https://global-news-aggregator-six.vercel.app/)**
+
 ## 🌟 Key Features
 
 - **Multi-country support**: Browse news from USA, UK, India, Australia, and Canada
