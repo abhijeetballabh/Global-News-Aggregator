@@ -133,7 +133,20 @@ function App() {
           </form>
         </Paper>
         {loading ? (
-          <CircularProgress sx={{ display: 'block', mx: 'auto', my: 4, color: red }} />
+          <Box sx={{
+            minHeight: "60vh",
+            width: "100%",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            bgcolor: "#fafafa",
+            borderRadius: 2,
+            boxShadow: 2,
+            mb: 2,
+            mx: { xs: 1, md: 2 }
+          }}>
+            <CircularProgress sx={{ color: red }} size={60} />
+          </Box>
         ) : (
           <Box sx={{ width: "100%", px: { xs: 1, md: 2 }, mx: "auto" }}>
             {articles.length === 0 && (
